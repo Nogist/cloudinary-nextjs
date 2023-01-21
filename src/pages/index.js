@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+import { CldImage } from 'next-cloudinary'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -16,9 +16,20 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <p>Cloudinary with NextJs</p>
-        <img 
-          src='https://res.cloudinary.com/ddgxwjgov/image/upload/v1674306686/nimbus_media/images/slide3.png'
-          alt='cloudnary-image'
+        <CldImage 
+          src='v1674306686/nimbus_media/images/slide3.png'
+          alt='cloudnary-image' 
+          width={500}
+          height={500}
+          crop='thumb'
+         /> 
+         <CldImage 
+          src='nimbus_media/images/slide8.png'
+          alt='cloudnary-image' 
+          width={500}
+          height={500}
+          crop='thumb'
+          sizes='100%'
          /> 
       </main>
     </>
